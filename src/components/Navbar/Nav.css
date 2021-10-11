@@ -1,0 +1,21 @@
+.navbar{
+ min-width: 100vw;
+ height: 10vh;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ font-size: 28px;
+
+}
+
+a{
+   color: gold;
+   text-decoration: none;
+}
+
+a.active{
+   color: red;
+ font-size: 34px;
+ 
+}
+
