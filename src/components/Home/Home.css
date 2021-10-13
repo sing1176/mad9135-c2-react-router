@@ -1,5 +1,14 @@
 .info{
    text-align: center;
    font-size:30px;
-   color:white;
+   color:rgb(0, 0, 0);
+   padding: 2rem;
+   background-color: rgb(34, 140, 202);
+}
+
+li{
+margin-left: 1rem;
+ text-align:justify;
+ text-overflow: clip;
+ list-style:circle
 }

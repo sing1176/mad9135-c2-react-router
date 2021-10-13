@@ -1,8 +1,12 @@
 .navbar{
  display: flex;
  align-items: center;
+ 
 }
 
 a{
    margin: 5rem;
+   font-size:30px;
 }
+
+

@@ -1,13 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Not = () => {
-   return (
-      <div>
-         <h1>
-            yo where are you going?
-         </h1>
-      </div>
-   )
-}
+	return (
+		<div>
+			<h1>yo where are you going?</h1>
+		</div>
+	);
+};
 
-export default Not
+export default Not;
