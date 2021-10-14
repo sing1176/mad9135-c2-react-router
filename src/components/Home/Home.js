@@ -6,9 +6,9 @@ const Home = () => {
 		<div>
 			<img src={img} alt={img} />
 			<div className="info">
-				<h3>Welcome to Sheild's Skrull database. </h3>
-				<h4>People you are about to see they are not real.</h4>
-				<h4>Click on Users to find a Random Skrull list.</h4>
+				<p>Welcome to Sheild's Skrull database. </p>
+				<p>People you are about to see they are not real.</p>
+				<p>Click on Users to find a Random Skrull list.</p>
 			</div>
 		</div>
 	);

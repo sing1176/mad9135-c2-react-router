@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom'
 import '../Navbar/Nav.css'
 const Nav = () => {
    return (
-			<div className="navbar">
+	   <>
+		<div className="navbar">
 				<NavLink activeClassName="active" to="/" exact>
 					Home
 				</NavLink>
@@ -12,8 +13,10 @@ const Nav = () => {
 				<NavLink activeClassName="active" to="/addressList">
 					Address
 				</NavLink>
-			</div>
+		</div>
+	</>
 		);
 }
 
 export default Nav
+

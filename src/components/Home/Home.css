@@ -1,5 +1,9 @@
-.info{
-   text-align: center;
-   font-size:30px;
-   color:white;
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	padding-top: 2rem;
 }
