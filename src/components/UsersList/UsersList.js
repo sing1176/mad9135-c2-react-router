@@ -7,6 +7,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const UsersList = ({ users }) => {
+		users.sort(function (a, b) {
+			if (a.name.last < b.name.last) {
+				return 1;
+			}
+			if (a.name.last > b.name.last) {
+				return -1;
+			}
+			return 0;
+		});
 	return (
 		<Container>
 			<Row xs={1} md={2} lg={4}>
@@ -16,7 +25,9 @@ const UsersList = ({ users }) => {
 							<Card key={user.cell} style={{ width: '20rem' }} className="mt-5">
 								<Card.Img variant="top" src={user.picture.large} />
 								<Card.Body>
-									<Card.Title>{user.name.first}</Card.Title>
+									<Card.Title>
+										{user.name.first} {user.name.last}{' '}
+									</Card.Title>
 									<Card.Text>
 										<p>
 											{' '}

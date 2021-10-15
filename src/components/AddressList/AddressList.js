@@ -3,6 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
 const AddressList = ({ users }) => {
 	console.log(users);
+	users.sort(function (a, b) {
+		if (a.name.last < b.name.last) {
+			return 1;
+		}
+		if (a.name.last > b.name.last) {
+			return -1;
+		}
+		return 0;
+	});
+
 	return (
 		<div>
 			<Table striped bordered hover variant="dark">
@@ -28,11 +38,9 @@ const AddressList = ({ users }) => {
 						</tr>
 					))}
 				</tbody>
-				
 			</Table>
 		</div>
 	);
 };
 
 export default AddressList;
-
