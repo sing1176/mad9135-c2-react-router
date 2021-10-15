@@ -4,14 +4,16 @@ import * as Icon from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 const UsersList = ({ users }) => {
 	return (
 		<Container>
 			<Row xs={1} md={2} lg={4}>
-			{users.map((user) => (
+				{users.map((user) => (
 					<Col>
 						<div key={user.cell}>
-							<Card style={{ width: '20rem' }} className="mt-5">
+							<Card key={user.cell} style={{ width: '20rem' }} className="mt-5">
 								<Card.Img variant="top" src={user.picture.large} />
 								<Card.Body>
 									<Card.Title>{user.name.first}</Card.Title>
@@ -32,7 +34,7 @@ const UsersList = ({ users }) => {
 							</Card>
 						</div>
 					</Col>
-			))}
+				))}
 			</Row>
 		</Container>
 	);

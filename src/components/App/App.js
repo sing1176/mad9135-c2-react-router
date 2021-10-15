@@ -24,33 +24,33 @@ function App() {
 		fetchUsers();
 	}, []);
 
-	console.log(users);
+	function findUser(id) {
+		return users.find((el) => el.cell === id);
+	}
 
 	return (
 		<div className="App">
-			
-				<Nav />
-		
+			<Nav />
 
 			{/* // Routing */}
 			<Switch>
-			<Route path="/" exact>
-				<Home />
-			</Route>
-			<Route path="/usersList">
-				<UsersList users={users} />
-			</Route>
-			<Route path="/addressList">
-				<AddressList />
-			</Route>
-			<Route path="/404">
-				<Not />
-			</Route>
-			<Route path="/user/:id">
-				<User />
-			</Route>
-			<Redirect to="/404" />
-			</ Switch>
+				<Route path="/" exact>
+					<Home />
+				</Route>
+				<Route path="/usersList">
+					<UsersList users={users} />
+				</Route>
+				<Route path="/addressList">
+					<AddressList />
+				</Route>
+				<Route path="/404">
+					<Not />
+				</Route>
+				<Route path="/user/:id">
+					<User findUser={findUser} />
+				</Route>
+				<Redirect to="/404" />
+			</Switch>
 		</div>
 	);
 }
