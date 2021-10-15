@@ -1,36 +1,32 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Card, Button, Row , Col, Container} from 'react-bootstrap';
+import { Card, Button, Col, Container, Row } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
-import './UsersList.css'
-const UsersList = () => {
-	async function fetchUsers() {
-		let url =
-			'https://randomuser.me/api/?results=24&seed=sing1176&nat=au,ca,nz,gb,us';
-		let res = await fetch(url);
-		let data = await res.json();
-		setUsers(data.results);
-	}
+import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-	const [users, setUsers] = useState([]);
 
-	useEffect(() => {
-		fetchUsers();
-	}, []);
 
-	console.log(users);
+const UsersList = ({ users }) => {
+		users.sort(function (a, b) {
+			if (a.name.last < b.name.last) {
+				return 1;
+			}
+			if (a.name.last > b.name.last) {
+				return -1;
+			}
+			return 0;
+		});
 	return (
-		<>
-			<Container >
-				<h2 className="text-danger ">NOT REAL USERS </h2>
-				<Row xs={1} md={3} lg={4} className="g-3">
-					{users.map((user) => (
-						<Col>
-							<Card style={{ width: '20rem' }} className="mt-5">
+		<Container>
+			<Row xs={1} md={2} lg={4}>
+				{users.map((user) => (
+					<Col>
+						<div key={user.cell}>
+							<Card key={user.cell} style={{ width: '20rem' }} className="mt-5">
 								<Card.Img variant="top" src={user.picture.large} />
 								<Card.Body>
 									<Card.Title>
-										{user.name.first} {user.name.last}
+										{user.name.first} {user.name.last}{' '}
 									</Card.Title>
 									<Card.Text>
 										<p>
@@ -42,14 +38,16 @@ const UsersList = () => {
 											<Icon.EnvelopeFill /> {user.email}
 										</p>
 									</Card.Text>
-									<Button variant="primary">More info</Button>
+									<NavLink activeClassName="active" to={`/user/${user.cell}`}>
+										<Button variant="primary">More info</Button>
+									</NavLink>
 								</Card.Body>
 							</Card>
-						</Col>
-					))}
-				</Row>
-			</Container>
-		</>
+						</div>
+					</Col>
+				))}
+			</Row>
+		</Container>
 	);
 };
 

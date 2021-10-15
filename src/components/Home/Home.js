@@ -5,11 +5,11 @@ const Home = () => {
 	return (
 		<div>
 			<img src={img} alt={img} />
-			<ul className="info">
-				<li>Welcome to Sheild's Skrull database. </li>
-				<li>People you are about to see they are not real.</li>
-				<li>Click on Users to find a Random Skrull imposter.</li>
-			</ul>
+			<div className="info">
+				<p>Welcome to Sheild's Skrull database. </p>
+				<p>People you are about to see they are not real.</p>
+				<p>Click on Users to find a Random Skrull list.</p>
+			</div>
 		</div>
 	);
 };
