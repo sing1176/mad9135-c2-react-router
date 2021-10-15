@@ -41,7 +41,7 @@ function App() {
 					<UsersList users={users} />
 				</Route>
 				<Route path="/addressList">
-					<AddressList />
+					<AddressList users={users} />
 				</Route>
 				<Route path="/404">
 					<Not />
